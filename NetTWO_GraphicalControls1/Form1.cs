@@ -12,6 +12,8 @@ namespace NetTWO_GraphicalControls1
 {
     public partial class Form1 : Form
     {
+        public Button b;
+        Random r = new Random();
         public Form1()
         {
             InitializeComponent();
@@ -72,6 +74,28 @@ namespace NetTWO_GraphicalControls1
             {
                 errorProvider1.SetError(textBox2, "");
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {//define a button in code
+            b = new Button();
+            b.Text = "Hit me to take a break";
+            b.Location = new Point(13, 242);
+            b.Click += new System.EventHandler(mybutton_stuff);
+            this.Controls.Add(b);
+            //turn on timer
+            timer1.Enabled = true;
+        }
+        private void mybutton_stuff(object sender, EventArgs e)
+        {
+            //turn timer off
+            timer1.Enabled = false;
+            MessageBox.Show("You Got Me");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            b.Location = new Point(r.Next(1, 300), r.Next(1, 300));
         }
     }
 }

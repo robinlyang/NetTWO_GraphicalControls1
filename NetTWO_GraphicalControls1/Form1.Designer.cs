@@ -48,6 +48,8 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.clock1 = new clock.clock();
+            this.button4 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -115,9 +117,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(161, 59);
+            this.pictureBox1.Location = new System.Drawing.Point(555, 183);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(387, 301);
+            this.pictureBox1.Size = new System.Drawing.Size(320, 234);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -192,18 +194,34 @@
             // 
             // clock1
             // 
-            this.clock1.clock_color = System.Drawing.Color.Red;
+            this.clock1.clock_color = System.Drawing.SystemColors.MenuHighlight;
             this.clock1.clock_type = clock.types.longtime;
             this.clock1.Location = new System.Drawing.Point(771, 12);
             this.clock1.Name = "clock1";
             this.clock1.Size = new System.Drawing.Size(92, 29);
             this.clock1.TabIndex = 8;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(13, 212);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 442);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.clock1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -245,6 +263,8 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button button3;
         private clock.clock clock1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
